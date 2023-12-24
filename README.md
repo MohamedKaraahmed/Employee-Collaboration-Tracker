@@ -91,7 +91,7 @@ Detailed API endpoint descriptions for managing employees, projects, and assignm
 
 ### Using the Application
 
-Place your CSV file in `src/main/resources/inputData` and copy-paste the path to you file in DataLoaderService.class.
+Place your CSV file in `src/main/resources/inputData` and copy-paste the path to your file in DataLoaderService.class.
 The application will automatically load and parse the data on startup.
 The REST API endpoints are available for managing employees, projects, assignments, and generating reports.
 
