@@ -1,0 +1,53 @@
+Employee controller {
+
+Add json pattern:
+{
+  "name": "John Doe",
+  "email": "johndoe@example.com",
+  "position": "Software Engineer",
+  "salary": 60000
+}
+
+Update json pattern:
+{id} +
+{
+  "name": "John Doe Updated",
+  "email": "johndoeupdated@example.com",
+  "position": "Senior Software Engineer",
+  "salary": 70000
+}
+}
+Project Controller{
+Add json pattern:
+{
+  "title": "Project Alpha",
+  "description": "Project Alpha Description",
+  "startDate": "2021-01-01",
+  "endDate": "2021-12-31"
+}
+Update json pattern:
+{id} +
+{
+  "title": "Project Alpha Updated",
+  "description": "Updated Description",
+  "startDate": "2021-02-01",
+  "endDate": "2022-01-31"
+}
+}
+AssignmentController{
+Add json pattern:
+{
+  "employeeId": 1,
+  "projectId": 3,
+  "dateFrom": "2021-01-01",
+  "dateTo": "2021-12-31"
+}
+Update json pattern:
+{id} +
+{
+  "employeeId": 1,
+  "projectId": 3,
+  "dateFrom": "2021-01-15",
+  "dateTo": "2021-11-30"
+}
+}
