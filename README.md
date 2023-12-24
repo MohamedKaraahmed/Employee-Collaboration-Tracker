@@ -38,7 +38,7 @@ Upon startup, the application performs the following operations:
 1. **Loading Assignments**: Reads assignment data from a CSV file located in `src/main/resources/inputData`.
 2. **Employee and Project Verification**: Checks if each employee and project from the assignments exist in the database. If not, it adds them.
 
-To add or modify employees, projects, or assignments, HTTP requests should be sent to the respective API endpoints.
+#To add or modify employees, projects, or assignments, HTTP requests should be sent to the respective API endpoints.
 ## API Endpoints
 
 Detailed API endpoint descriptions for managing employees, projects, and assignments.
