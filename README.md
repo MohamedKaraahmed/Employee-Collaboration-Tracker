@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This Spring Boot application identifies pairs of employees who have worked together on common projects for the longest period. It calculates the duration of their collaboration on each project using data provided via a CSV file. The application follows the MVC pattern, uses Hibernate for ORM, and adheres to RESTful principles.
+This Spring Boot application identifies pairs of employees who have worked together on common projects for the longest period. It calculates the duration of their collaboration on projects using data provided via a CSV file. The application follows the MVC pattern, uses Hibernate for ORM, and adheres to RESTful principles.
 
 ## Key Features
 
