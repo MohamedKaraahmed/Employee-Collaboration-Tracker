@@ -16,6 +16,7 @@ This Spring Boot application identifies pairs of employees who have worked toget
 
 - Spring Boot
 - Hibernate
+- MySQL Database
 - JPA Repositories
 - Validation Annotations
 - Lombok
