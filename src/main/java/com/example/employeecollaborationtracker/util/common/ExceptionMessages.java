@@ -18,5 +18,6 @@ public class ExceptionMessages {
     public static final String INVALID_URL_PATH = "Check URL path correctness and try again!";
     public static final String INVALID_URL_METHOD = "Check the Request Method Type correctness and try again!";
     public static final String INVALID_DATA_TO_PERSIST = "Record with that data already exists!";
+    public static final String CSV_FILE_PROBLEM = "Problem with the CSV file occurred!";
 
 }

@@ -1,5 +1,6 @@
 package com.example.employeecollaborationtracker.service.Impl;
 
+import com.example.employeecollaborationtracker.config.CustomException;
 import com.example.employeecollaborationtracker.service.DataLoader;
 import com.example.employeecollaborationtracker.service.ValidationService;
 import jakarta.annotation.PostConstruct;
@@ -9,6 +10,8 @@ import org.springframework.stereotype.Component;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+
+import static com.example.employeecollaborationtracker.util.common.ExceptionMessages.CSV_FILE_PROBLEM;
 
 @Component
 public class DataLoaderImpl implements DataLoader {
@@ -34,9 +37,10 @@ public class DataLoaderImpl implements DataLoader {
                 validationService.validateCSVRecord(CSVRecord);
             }
 
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (IOException exception) {
+            throw new CustomException(CSV_FILE_PROBLEM);
         }
+
     }
 }
 

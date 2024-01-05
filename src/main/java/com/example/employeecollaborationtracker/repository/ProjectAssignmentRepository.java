@@ -13,15 +13,23 @@ public interface ProjectAssignmentRepository extends JpaRepository<ProjectAssign
     ProjectAssignment findProjectAssignmentByEmployeeIdAndProjectIdAndDateFromAndDateTo
             (Long employeeId, Long projectId, Date dateFrom, Date dateTo);
 
-    @Query(value = "SELECT " +
-            "pa1.employee_id AS employee1Id, " +
-            "pa2.employee_id AS employee2Id, " +
-            "pa1.project_id AS projectId, " +
-            "DATEDIFF(LEAST(COALESCE(pa1.date_to, CURDATE()), COALESCE(pa2.date_to, CURDATE())), GREATEST(pa1.date_from, pa2.date_from)) + 1 AS daysWorkedTogether " +
-            "FROM project_assignments pa1 " +
-            "JOIN project_assignments pa2 ON pa1.project_id = pa2.project_id AND pa1.employee_id < pa2.employee_id " +
-            "WHERE pa1.date_from <= COALESCE(pa2.date_to, CURDATE()) AND pa2.date_from <= COALESCE(pa1.date_to, CURDATE()) " +
-            "AND GREATEST(pa1.date_from, pa2.date_from) <= LEAST(COALESCE(pa1.date_to, CURDATE()), COALESCE(pa2.date_to, CURDATE()))",
+    @Query(value = """
+            SELECT
+                pa1.employee_id AS employee1Id,
+                pa2.employee_id AS employee2Id,
+                pa1.project_id AS projectId,
+                DATEDIFF(
+                    LEAST(COALESCE(pa1.date_to, CURDATE()), COALESCE(pa2.date_to, CURDATE())),
+                    GREATEST(pa1.date_from, pa2.date_from)
+                ) + 1 AS daysWorkedTogether
+            FROM
+                project_assignments pa1
+            JOIN
+                project_assignments pa2 ON pa1.project_id = pa2.project_id AND pa1.employee_id < pa2.employee_id
+            WHERE
+                pa1.date_from <= COALESCE(pa2.date_to, CURDATE())
+                AND pa2.date_from <= COALESCE(pa1.date_to, CURDATE())
+                AND GREATEST(pa1.date_from, pa2.date_from) <= LEAST(COALESCE(pa1.date_to, CURDATE()), COALESCE(pa2.date_to, CURDATE()))""",
             nativeQuery = true)
     List<Object[]> employeeOverlapReport();
 
