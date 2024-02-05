@@ -15,6 +15,7 @@ This Spring Boot application identifies pairs of employees who have worked toget
 ## Technologies Used
 
 - Spring Boot
+- HTTP Requests
 - Hibernate
 - MySQL
 - JPA Repositories
