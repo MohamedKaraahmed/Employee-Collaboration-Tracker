@@ -17,7 +17,7 @@ public class EmployeeController {
 
     private final EmployeeService employeeService;
 
-    @Autowired // replace everywhere
+    @Autowired 
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
